@@ -4,9 +4,9 @@ The `cache` pkg provides a generic in-memory key-value cache with optional Time-
 
 ## Features
 
-- Generic key-value cache: The cache can store any type of key-value pairs.
-- Optional TTL support: Each key-value pair can have an optional TTL, after which the pair is automatically removed from the cache.
-- Thread-safe: The cache uses a `sync.RWMutex` to ensure that it can be safely used from multiple goroutines.
+- **Generic key-value cache:** The cache can store any type of key-value pairs.
+- **Optional TTL support:** Each key-value pair can have an optional TTL, after which the pair is automatically removed from the cache.
+- **Thread-safe:** The cache uses a `sync.RWMutex` to ensure that it can be safely used from multiple goroutines.
 
 ## Usage
 
