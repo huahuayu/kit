@@ -1,0 +1,18 @@
+{
+  "database": {
+    "host": "dbserver",
+    "port": 5432,
+    "user": "admin"
+  },
+  "logging": {
+    "level": "debug"
+  },
+  "featureFlags": {
+    "betaFeatures": true
+  },
+  "apiVersion": ["v1", "v2", "v3"],
+  "mapping": {
+    "foo": "bar",
+    "baz": "qux"
+  }
+}

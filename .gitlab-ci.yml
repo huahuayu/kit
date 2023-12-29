@@ -1,0 +1,11 @@
+image: golang:1.21.5-alpine
+
+stages:
+  - test
+
+before_script:
+  - go mod download
+
+test:
+  stage: test
+  script: go test -v ./...
