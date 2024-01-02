@@ -15,7 +15,6 @@ import (
 )
 
 type Loader[T any] interface {
-	LoadDefault(fn func() (T, error)) (T, error)
 	Load(configPath string, fileType FileType) (T, error)
 }
 
@@ -32,10 +31,6 @@ type configLoader[T any] struct{}
 
 func NewConfigLoader[T any]() Loader[T] {
 	return &configLoader[T]{}
-}
-
-func (c *configLoader[T]) LoadDefault(fn func() (T, error)) (T, error) {
-	return fn()
 }
 
 // Load loads configurations from a file

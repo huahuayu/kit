@@ -22,13 +22,13 @@ func ResponseOK(w http.ResponseWriter, data interface{}, msg string) {
 	json.NewEncoder(w).Encode(response)
 }
 
-func ResponseErr(w http.ResponseWriter, code string, msg string, httpCode int) {
+func ResponseErr(w http.ResponseWriter, code string, msg string, httpStatusCode int) {
 	response := Response{
 		Data: "",
 		Code: code,
 		Msg:  msg,
 	}
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(httpCode)
+	w.WriteHeader(httpStatusCode)
 	json.NewEncoder(w).Encode(response)
 }

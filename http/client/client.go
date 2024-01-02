@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -88,7 +88,7 @@ func (c *Client) get(url string, param ...Param) ([]byte, error) {
 	if resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("http status code %d", resp.StatusCode)
 	}
-	return ioutil.ReadAll(resp.Body)
+	return io.ReadAll(resp.Body)
 }
 
 func (c *Client) post(url string, payload interface{}, header ...map[string]string) ([]byte, error) {
@@ -114,5 +114,5 @@ func (c *Client) post(url string, payload interface{}, header ...map[string]stri
 	if resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("http status code %d", resp.StatusCode)
 	}
-	return ioutil.ReadAll(resp.Body)
+	return io.ReadAll(resp.Body)
 }
